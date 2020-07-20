@@ -62,13 +62,6 @@
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Kbu-PN-aYC">
-                                <rect key="frame" x="15" y="59" width="30" height="30"/>
-                                <state key="normal" title="&lt;-"/>
-                                <connections>
-                                    <action selector="backButtonPressed:" destination="j5G-eX-OZD" eventType="touchUpInside" id="Kqk-b3-xxs"/>
-                                </connections>
-                            </button>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="A" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="J7B-bK-4L0">
                                 <rect key="frame" x="201.5" y="442.5" width="11.5" height="21"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
@@ -87,11 +80,8 @@
                         <constraints>
                             <constraint firstItem="5x7-V4-4gt" firstAttribute="centerX" secondItem="ibf-Cf-6Yd" secondAttribute="centerX" id="AOq-cc-fjr"/>
                             <constraint firstItem="J7B-bK-4L0" firstAttribute="centerX" secondItem="ibf-Cf-6Yd" secondAttribute="centerX" id="Mm3-tp-8K3"/>
-                            <constraint firstItem="Kbu-PN-aYC" firstAttribute="leading" secondItem="ibf-Cf-6Yd" secondAttribute="leading" constant="15" id="UUa-TS-ggl"/>
-                            <constraint firstItem="ibf-Cf-6Yd" firstAttribute="trailing" relation="greaterThanOrEqual" secondItem="Kbu-PN-aYC" secondAttribute="trailing" symbolic="YES" id="gWD-Zv-r9z"/>
                             <constraint firstItem="J7B-bK-4L0" firstAttribute="centerY" secondItem="ibf-Cf-6Yd" secondAttribute="centerY" id="l4A-NW-x9y"/>
                             <constraint firstItem="ibf-Cf-6Yd" firstAttribute="bottom" secondItem="5x7-V4-4gt" secondAttribute="bottom" id="obT-3D-wyD"/>
-                            <constraint firstItem="Kbu-PN-aYC" firstAttribute="top" secondItem="ibf-Cf-6Yd" secondAttribute="top" constant="15" id="rZQ-0Z-pnu"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="ibf-Cf-6Yd"/>
                     </view>

@@ -4,6 +4,7 @@ class StepperView: UIView {
     
     @IBOutlet var contentView: UIView!
     @IBOutlet var stackView: UIStackView!
+    @IBOutlet weak var trailingLayoutConstraint: NSLayoutConstraint!
     private var totalItems: Int = 0
     
     init(totalItems: Int, frame: CGRect) {
@@ -25,6 +26,9 @@ class StepperView: UIView {
     func setupView() {
         contentView = loadViewFromNib()
         contentView.frame = self.bounds
+        if self.totalItems != 0 {
+            trailingLayoutConstraint.constant = (UIScreen.main.bounds.width / (CGFloat(self.totalItems + 1) ))
+        }
         self.addSubview(contentView)
         
         if self.totalItems != 0 {
@@ -48,11 +52,11 @@ class StepperView: UIView {
     func initialState(index: Int) {
         let subview = getStackView(index: index)
         if subview.isKind(of: StepContentView.self) {
-            if let stepContent = subview as? StepContentView, stepContent.state == .finalized {
+            if let stepContent = subview as? StepContentView {
                 stepContent.state = .initial
             }
         } else if subview.isKind(of: InitialStepContentView.self) {
-            if let stepContent = subview as? InitialStepContentView, stepContent.state == .finalized {
+            if let stepContent = subview as? InitialStepContentView {
                 stepContent.state = .initial
             }
         }
@@ -61,11 +65,11 @@ class StepperView: UIView {
     func currentState(index: Int) {
         let subview = getStackView(index: index)
         if subview.isKind(of: StepContentView.self) {
-            if let stepContent = subview as? StepContentView, stepContent.state == .initial {
+            if let stepContent = subview as? StepContentView {
                 stepContent.state = .current
             }
         } else if subview.isKind(of: InitialStepContentView.self) {
-            if let stepContent = subview as? InitialStepContentView, stepContent.state == .initial {
+            if let stepContent = subview as? InitialStepContentView {
                 stepContent.state = .current
             }
         }
@@ -74,11 +78,11 @@ class StepperView: UIView {
     func completedState(index: Int) {
         let subview = getStackView(index: index)
         if subview.isKind(of: StepContentView.self) {
-            if let stepContent = subview as? StepContentView, stepContent.state == .current {
+            if let stepContent = subview as? StepContentView {
                 stepContent.state = .completed
             }
         } else if subview.isKind(of: InitialStepContentView.self) {
-            if let stepContent = subview as? InitialStepContentView, stepContent.state == .current {
+            if let stepContent = subview as? InitialStepContentView {
                 stepContent.state = .completed
             }
         }
@@ -87,11 +91,11 @@ class StepperView: UIView {
     func finalizedState(index: Int) {
         let subview = getStackView(index: index)
         if subview.isKind(of: StepContentView.self) {
-            if let stepContent = subview as? StepContentView, stepContent.state == .completed {
+            if let stepContent = subview as? StepContentView {
                 stepContent.state = .finalized
             }
         } else if subview.isKind(of: InitialStepContentView.self) {
-            if let stepContent = subview as? InitialStepContentView, stepContent.state == .completed {
+            if let stepContent = subview as? InitialStepContentView {
                 stepContent.state = .finalized
             }
         }

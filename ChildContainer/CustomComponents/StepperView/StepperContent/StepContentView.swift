@@ -82,6 +82,6 @@ class StepContentView: UIView {
     
     private func removeImageFromButton() {
         stepImage.isHidden = true
-        stepLabel.text = "1"
+        stepLabel.text = "\(self.tag)"
     }
 }

@@ -11,7 +11,7 @@ import UIKit
 class ViewController: UIViewController {
 
     @IBOutlet weak var childContainerView: UIView!
-    private var stepperView: StepperView = StepperView.init(totalItems: 3, frame: CGRect.init(x: 0, y: 0, width: UIScreen.main.bounds.width, height: 60))
+    private var stepperView: StepperView = StepperView.init(totalItems: 3, frame: CGRect.init(x: 0, y: 20, width: UIScreen.main.bounds.width, height: 60))
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -60,6 +60,7 @@ class ViewController: UIViewController {
     @objc func removeChildVCFrom(notification: NSNotification) {
         if let index = notification.object as? Int {
             stepperView.initialState(index: index)
+            stepperView.currentState(index: index-1)
         }
         removeChildViewController()
     }
@@ -88,14 +89,15 @@ class ViewControllerA: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         print("--ViewControllerA")
+    }
+    
+    override func viewDidAppear(_ animated: Bool) {
+        super.viewDidAppear(animated)
+        print("--viewDidAppear A")
         NotificationCenter.default.post(name: Notification.Name("currentState"), object: 1)
         delay(2.0) {
             NotificationCenter.default.post(name: Notification.Name("completedState"), object: 1)
         }
-    }
-    
-    @IBAction func backButtonPressed(_ sender: Any) {
-        NotificationCenter.default.post(name: Notification.Name("removeChildVC"), object: 1)
     }
     
     @IBAction func nextButtonPressed(_ sender: Any) {
@@ -111,6 +113,11 @@ class ViewControllerB: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         print("--ViewControllerB")
+    }
+    
+    override func viewDidAppear(_ animated: Bool) {
+        super.viewDidAppear(animated)
+        print("--viewDidAppear B")
         NotificationCenter.default.post(name: Notification.Name("currentState"), object: 2)
         delay(2.0) {
             NotificationCenter.default.post(name: Notification.Name("completedState"), object: 2)
@@ -124,6 +131,7 @@ class ViewControllerB: UIViewController {
     
     @IBAction func backButtonPressed(_ sender: Any) {
         NotificationCenter.default.post(name: Notification.Name("removeChildVC"), object: 2)
+        //NotificationCenter.default.post(name: Notification.Name("currentState"), object: 1)
     }
     
     @IBAction func nextButtonPressed(_ sender: Any) {
@@ -138,6 +146,11 @@ class ViewControllerC: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         print("--ViewControllerC")
+    }
+    
+    override func viewDidAppear(_ animated: Bool) {
+        super.viewDidAppear(animated)
+        print("--viewDidAppear C")
         NotificationCenter.default.post(name: Notification.Name("currentState"), object: 3)
         delay(2.0) {
             NotificationCenter.default.post(name: Notification.Name("completedState"), object: 3)
@@ -151,6 +164,7 @@ class ViewControllerC: UIViewController {
     
     @IBAction func backButtonPressed(_ sender: Any) {
         NotificationCenter.default.post(name: Notification.Name("removeChildVC"), object: 3)
+        //NotificationCenter.default.post(name: Notification.Name("currentState"), object: 2)
     }
     
     @IBAction func nextButtonPressed(_ sender: Any) {
