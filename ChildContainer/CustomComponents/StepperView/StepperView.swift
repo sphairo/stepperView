@@ -4,6 +4,13 @@ class StepperView: UIView {
     
     @IBOutlet var contentView: UIView!
     @IBOutlet var stackView: UIStackView!
+    private var totalItems: Int = 0
+    
+    init(totalItems: Int, frame: CGRect) {
+        super.init(frame: frame)
+        self.totalItems = totalItems
+        setupView()
+    }
     
     override init(frame: CGRect) {
         super.init(frame: frame)
@@ -19,73 +26,78 @@ class StepperView: UIView {
         contentView = loadViewFromNib()
         contentView.frame = self.bounds
         self.addSubview(contentView)
+        
+        if self.totalItems != 0 {
+            for index in 1...self.totalItems {
+                print(index)
+                if index == 1 {
+                    let initialStepContentView = InitialStepContentView.init()
+                    initialStepContentView.tag = index
+                    initialStepContentView.stepLabel.text = "\(index)"
+                    stackView.addArrangedSubview(initialStepContentView)
+                } else {
+                    let stepContentView = StepContentView.init()
+                    stepContentView.tag = index
+                    stepContentView.stepLabel.text = "\(index)"
+                    stackView.addArrangedSubview(stepContentView)
+                }
+            }
+        }
     }
     
-    func initialState() {
-        for step in stackView.subviews.reversed() {
-            print(step)
-            if let stepContent = step as? StepContentView, stepContent.state == .finalized {
+    func initialState(index: Int) {
+        let subview = getStackView(index: index)
+        if subview.isKind(of: StepContentView.self) {
+            if let stepContent = subview as? StepContentView, stepContent.state == .finalized {
                 stepContent.state = .initial
-                return
+            }
+        } else if subview.isKind(of: InitialStepContentView.self) {
+            if let stepContent = subview as? InitialStepContentView, stepContent.state == .finalized {
+                stepContent.state = .initial
             }
         }
     }
     
-    func currentState() {
-        for step in stackView.subviews {
-            print(step)
-            if let stepContent = step as? StepContentView, stepContent.state == .initial {
+    func currentState(index: Int) {
+        let subview = getStackView(index: index)
+        if subview.isKind(of: StepContentView.self) {
+            if let stepContent = subview as? StepContentView, stepContent.state == .initial {
                 stepContent.state = .current
-                return
+            }
+        } else if subview.isKind(of: InitialStepContentView.self) {
+            if let stepContent = subview as? InitialStepContentView, stepContent.state == .initial {
+                stepContent.state = .current
             }
         }
     }
     
-    func completedState() {
-        for step in stackView.subviews {
-            print(step)
-            if let stepContent = step as? StepContentView, stepContent.state == .current {
+    func completedState(index: Int) {
+        let subview = getStackView(index: index)
+        if subview.isKind(of: StepContentView.self) {
+            if let stepContent = subview as? StepContentView, stepContent.state == .current {
                 stepContent.state = .completed
-                return
+            }
+        } else if subview.isKind(of: InitialStepContentView.self) {
+            if let stepContent = subview as? InitialStepContentView, stepContent.state == .current {
+                stepContent.state = .completed
             }
         }
     }
     
-    func finalizedState() {
-        for step in stackView.subviews {
-            print(step)
-            if let stepContent = step as? StepContentView, stepContent.state == .completed {
+    func finalizedState(index: Int) {
+        let subview = getStackView(index: index)
+        if subview.isKind(of: StepContentView.self) {
+            if let stepContent = subview as? StepContentView, stepContent.state == .completed {
                 stepContent.state = .finalized
-                return
+            }
+        } else if subview.isKind(of: InitialStepContentView.self) {
+            if let stepContent = subview as? InitialStepContentView, stepContent.state == .completed {
+                stepContent.state = .finalized
             }
         }
     }
     
-//    func nextStep() {
-//        for step in stackView.subviews {
-//            print(step)
-//            if let stepContent = step as? StepContentView, !stepContent.isCurrentState {
-//                stepContent.isCurrentState = true
-//                return
-//            }
-//        }
-//    }
-//
-//    func stepCompleted() {
-//        for step in stackView.subviews {
-//            if let stepContent = step as? StepContentView, !stepContent.isCompleted {
-//                stepContent.isCompleted = true
-//                return
-//            }
-//        }
-//    }
-//
-//    func previousStep() {
-//        for step in stackView.subviews.reversed() {
-//            if let stepContent = step as? StepContentView, stepContent.isCurrentState {
-//                stepContent.isCurrentState = false
-//                return
-//            }
-//        }
-//    }
+    private func getStackView(index: Int) -> UIView {
+        return stackView.subviews[index-1]
+    }
 }

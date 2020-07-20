@@ -21,6 +21,8 @@
 		F53F46EE24C392CE00D6CAF8 /* StepContentView.xib in Resources */ = {isa = PBXBuildFile; fileRef = F53F46ED24C392CE00D6CAF8 /* StepContentView.xib */; };
 		F53F46F124C394FE00D6CAF8 /* StepContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F53F46F024C394FE00D6CAF8 /* StepContentView.swift */; };
 		F5CD702224C3A3C70032CACB /* Color+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = F5CD702124C3A3C70032CACB /* Color+Extension.swift */; };
+		F5FDE1F724C62E5F00E3B919 /* InitialStepContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F5FDE1F624C62E5F00E3B919 /* InitialStepContentView.swift */; };
+		F5FDE1F924C62EEB00E3B919 /* InitialStepContentView.xib in Resources */ = {isa = PBXBuildFile; fileRef = F5FDE1F824C62EEB00E3B919 /* InitialStepContentView.xib */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -40,6 +42,8 @@
 		F53F46ED24C392CE00D6CAF8 /* StepContentView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = StepContentView.xib; sourceTree = "<group>"; };
 		F53F46F024C394FE00D6CAF8 /* StepContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StepContentView.swift; sourceTree = "<group>"; };
 		F5CD702124C3A3C70032CACB /* Color+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Color+Extension.swift"; sourceTree = "<group>"; };
+		F5FDE1F624C62E5F00E3B919 /* InitialStepContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InitialStepContentView.swift; sourceTree = "<group>"; };
+		F5FDE1F824C62EEB00E3B919 /* InitialStepContentView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = InitialStepContentView.xib; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -127,6 +131,8 @@
 			children = (
 				F53F46ED24C392CE00D6CAF8 /* StepContentView.xib */,
 				F53F46F024C394FE00D6CAF8 /* StepContentView.swift */,
+				F5FDE1F624C62E5F00E3B919 /* InitialStepContentView.swift */,
+				F5FDE1F824C62EEB00E3B919 /* InitialStepContentView.xib */,
 			);
 			path = StepperContent;
 			sourceTree = "<group>";
@@ -190,6 +196,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				F53F46EE24C392CE00D6CAF8 /* StepContentView.xib in Resources */,
+				F5FDE1F924C62EEB00E3B919 /* InitialStepContentView.xib in Resources */,
 				F53F46D824C29E0400D6CAF8 /* LaunchScreen.storyboard in Resources */,
 				F53F46D524C29E0400D6CAF8 /* Assets.xcassets in Resources */,
 				F53F46D324C29E0100D6CAF8 /* Main.storyboard in Resources */,
@@ -213,6 +220,7 @@
 				F53F46F124C394FE00D6CAF8 /* StepContentView.swift in Sources */,
 				F53F46E924C38F1600D6CAF8 /* StepperView.swift in Sources */,
 				F53F46CE24C29E0100D6CAF8 /* SceneDelegate.swift in Sources */,
+				F5FDE1F724C62E5F00E3B919 /* InitialStepContentView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

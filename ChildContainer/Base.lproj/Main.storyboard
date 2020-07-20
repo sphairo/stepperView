@@ -30,13 +30,6 @@
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="IAI-aN-fkv" customClass="StepperView" customModule="ChildContainer" customModuleProvider="target">
-                                <rect key="frame" x="0.0" y="44" width="414" height="60"/>
-                                <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
-                                <constraints>
-                                    <constraint firstAttribute="height" constant="60" id="12A-4M-pDI"/>
-                                </constraints>
-                            </view>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="G9h-oX-M62">
                                 <rect key="frame" x="0.0" y="104" width="414" height="758"/>
                                 <color key="backgroundColor" systemColor="systemYellowColor" red="1" green="0.80000000000000004" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
@@ -44,21 +37,17 @@
                         </subviews>
                         <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                         <constraints>
-                            <constraint firstItem="G9h-oX-M62" firstAttribute="top" secondItem="IAI-aN-fkv" secondAttribute="bottom" id="3Jy-VA-abK"/>
-                            <constraint firstItem="IAI-aN-fkv" firstAttribute="leading" secondItem="Rwd-O3-FaL" secondAttribute="leading" id="BTK-23-Ccn"/>
+                            <constraint firstItem="G9h-oX-M62" firstAttribute="top" secondItem="Rwd-O3-FaL" secondAttribute="top" constant="60" id="1TA-N2-Rub"/>
                             <constraint firstItem="G9h-oX-M62" firstAttribute="centerX" secondItem="Rwd-O3-FaL" secondAttribute="centerX" id="bNb-aW-V77"/>
                             <constraint firstItem="G9h-oX-M62" firstAttribute="leading" secondItem="Rwd-O3-FaL" secondAttribute="leading" id="cs0-wb-NDQ"/>
-                            <constraint firstItem="Rwd-O3-FaL" firstAttribute="trailing" secondItem="IAI-aN-fkv" secondAttribute="trailing" id="hMx-qf-TXB"/>
                             <constraint firstItem="Rwd-O3-FaL" firstAttribute="bottom" secondItem="G9h-oX-M62" secondAttribute="bottom" id="ieR-Jf-fV8"/>
                             <constraint firstItem="Rwd-O3-FaL" firstAttribute="trailing" secondItem="G9h-oX-M62" secondAttribute="trailing" id="ntp-ia-Vmb"/>
-                            <constraint firstItem="Rwd-O3-FaL" firstAttribute="top" secondItem="IAI-aN-fkv" secondAttribute="top" id="wgd-hl-iXq"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="Rwd-O3-FaL"/>
                     </view>
                     <navigationItem key="navigationItem" id="bja-Ia-IQn"/>
                     <connections>
                         <outlet property="childContainerView" destination="G9h-oX-M62" id="nXP-63-v2f"/>
-                        <outlet property="stepperView" destination="IAI-aN-fkv" id="CRy-N8-uEF"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="r0k-zN-HiY" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
