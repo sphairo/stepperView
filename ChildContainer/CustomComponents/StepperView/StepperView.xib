@@ -1,0 +1,63 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="16097" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+    <device id="retina6_1" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="16087"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="StepperView" customModule="ChildContainer" customModuleProvider="target">
+            <connections>
+                <outlet property="contentView" destination="iN0-l3-epB" id="QSC-sW-e7O"/>
+                <outlet property="stackView" destination="v5u-Vg-JpK" id="0Li-Yk-ILr"/>
+            </connections>
+        </placeholder>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <view contentMode="scaleToFill" id="iN0-l3-epB">
+            <rect key="frame" x="0.0" y="0.0" width="414" height="80"/>
+            <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+            <subviews>
+                <stackView opaque="NO" contentMode="scaleToFill" distribution="fillEqually" translatesAutoresizingMaskIntoConstraints="NO" id="v5u-Vg-JpK">
+                    <rect key="frame" x="25" y="32" width="364" height="60"/>
+                    <subviews>
+                        <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Yqh-7a-BXx" customClass="StepContentView" customModule="ChildContainer" customModuleProvider="target">
+                            <rect key="frame" x="0.0" y="0.0" width="73" height="60"/>
+                            <color key="backgroundColor" systemColor="systemGray6Color" red="0.94901960780000005" green="0.94901960780000005" blue="0.96862745100000003" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        </view>
+                        <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Anw-LX-xde" customClass="StepContentView" customModule="ChildContainer" customModuleProvider="target">
+                            <rect key="frame" x="73" y="0.0" width="72.5" height="60"/>
+                            <color key="backgroundColor" systemColor="systemGray5Color" red="0.8980392157" green="0.8980392157" blue="0.91764705879999997" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        </view>
+                        <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="4sh-Lf-sHO" customClass="StepContentView" customModule="ChildContainer" customModuleProvider="target">
+                            <rect key="frame" x="145.5" y="0.0" width="73" height="60"/>
+                            <color key="backgroundColor" systemColor="systemGray4Color" red="0.81960784310000001" green="0.81960784310000001" blue="0.83921568629999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        </view>
+                        <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="9gr-5n-NPs" customClass="StepContentView" customModule="ChildContainer" customModuleProvider="target">
+                            <rect key="frame" x="218.5" y="0.0" width="72.5" height="60"/>
+                            <color key="backgroundColor" systemColor="systemGray3Color" red="0.78039215689999997" green="0.78039215689999997" blue="0.80000000000000004" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        </view>
+                        <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Z5Z-xD-3FP" customClass="StepContentView" customModule="ChildContainer" customModuleProvider="target">
+                            <rect key="frame" x="291" y="0.0" width="73" height="60"/>
+                            <color key="backgroundColor" systemColor="systemGray2Color" red="0.68235294120000001" green="0.68235294120000001" blue="0.69803921570000005" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        </view>
+                    </subviews>
+                    <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                    <constraints>
+                        <constraint firstAttribute="height" constant="60" id="tJ5-9G-ViC"/>
+                    </constraints>
+                </stackView>
+            </subviews>
+            <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+            <constraints>
+                <constraint firstItem="v5u-Vg-JpK" firstAttribute="leading" secondItem="vUN-kp-3ea" secondAttribute="leading" constant="25" id="BzV-4b-xly"/>
+                <constraint firstItem="v5u-Vg-JpK" firstAttribute="centerY" secondItem="vUN-kp-3ea" secondAttribute="centerY" id="eCi-yL-Fgv"/>
+                <constraint firstItem="v5u-Vg-JpK" firstAttribute="centerX" secondItem="vUN-kp-3ea" secondAttribute="centerX" id="eDr-Df-YFQ"/>
+                <constraint firstItem="vUN-kp-3ea" firstAttribute="trailing" secondItem="v5u-Vg-JpK" secondAttribute="trailing" constant="25" id="eoW-uu-4XW"/>
+            </constraints>
+            <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
+            <viewLayoutGuide key="safeArea" id="vUN-kp-3ea"/>
+            <point key="canvasLocation" x="139" y="153"/>
+        </view>
+    </objects>
+</document>

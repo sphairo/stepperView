@@ -1,0 +1,72 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="16097" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+    <device id="retina6_1" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="16087"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="StepContentView" customModule="ChildContainer" customModuleProvider="target">
+            <connections>
+                <outlet property="contentView" destination="iN0-l3-epB" id="Q5S-2V-1ih"/>
+                <outlet property="stepCircleView" destination="mze-ph-BWw" id="jB8-ss-Wax"/>
+                <outlet property="stepImage" destination="XQk-1c-aK6" id="C0N-uF-49U"/>
+                <outlet property="stepLabel" destination="l9A-4M-3dE" id="vQY-RD-NlK"/>
+                <outlet property="stepLineView" destination="OvB-uQ-5AM" id="uIS-7y-zid"/>
+            </connections>
+        </placeholder>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <view contentMode="scaleToFill" id="iN0-l3-epB">
+            <rect key="frame" x="0.0" y="0.0" width="80" height="64"/>
+            <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+            <subviews>
+                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="OvB-uQ-5AM">
+                    <rect key="frame" x="0.0" y="53" width="80" height="2"/>
+                    <color key="backgroundColor" red="0.74713379140000002" green="0.60924285649999999" blue="0.96604317429999997" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                    <constraints>
+                        <constraint firstAttribute="height" constant="2" id="y70-WV-fZv"/>
+                    </constraints>
+                </view>
+                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="mze-ph-BWw">
+                    <rect key="frame" x="50" y="39" width="30" height="30"/>
+                    <subviews>
+                        <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="XQk-1c-aK6">
+                            <rect key="frame" x="5" y="5" width="20" height="20"/>
+                            <constraints>
+                                <constraint firstAttribute="height" constant="20" id="RPU-o5-sRf"/>
+                                <constraint firstAttribute="width" constant="20" id="zGH-LJ-3zE"/>
+                            </constraints>
+                        </imageView>
+                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="1" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="l9A-4M-3dE">
+                            <rect key="frame" x="11.5" y="5.5" width="7" height="19.5"/>
+                            <fontDescription key="fontDescription" type="system" pointSize="16"/>
+                            <color key="textColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                            <nil key="highlightedColor"/>
+                        </label>
+                    </subviews>
+                    <color key="backgroundColor" red="0.74713379140000002" green="0.60924285649999999" blue="0.96604317429999997" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                    <constraints>
+                        <constraint firstItem="XQk-1c-aK6" firstAttribute="centerY" secondItem="mze-ph-BWw" secondAttribute="centerY" id="4Rz-Iz-Q5w"/>
+                        <constraint firstItem="l9A-4M-3dE" firstAttribute="centerX" secondItem="mze-ph-BWw" secondAttribute="centerX" id="FoW-Rt-g2z"/>
+                        <constraint firstItem="XQk-1c-aK6" firstAttribute="centerX" secondItem="mze-ph-BWw" secondAttribute="centerX" id="GWF-MU-eIl"/>
+                        <constraint firstItem="l9A-4M-3dE" firstAttribute="centerY" secondItem="mze-ph-BWw" secondAttribute="centerY" id="m9L-VQ-4Is"/>
+                        <constraint firstAttribute="width" constant="30" id="pVU-SC-5DP"/>
+                        <constraint firstAttribute="height" constant="30" id="xeu-K7-50L"/>
+                    </constraints>
+                </view>
+            </subviews>
+            <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+            <constraints>
+                <constraint firstItem="OvB-uQ-5AM" firstAttribute="centerY" secondItem="vUN-kp-3ea" secondAttribute="centerY" id="CPM-ow-qpi"/>
+                <constraint firstItem="mze-ph-BWw" firstAttribute="trailing" secondItem="vUN-kp-3ea" secondAttribute="trailing" id="Qw8-6X-ThZ"/>
+                <constraint firstItem="OvB-uQ-5AM" firstAttribute="leading" secondItem="vUN-kp-3ea" secondAttribute="leading" id="cC6-Aw-w4N"/>
+                <constraint firstItem="mze-ph-BWw" firstAttribute="centerY" secondItem="vUN-kp-3ea" secondAttribute="centerY" id="fgV-LB-zs7"/>
+                <constraint firstItem="vUN-kp-3ea" firstAttribute="trailing" secondItem="OvB-uQ-5AM" secondAttribute="trailing" id="xdo-3y-gaB"/>
+            </constraints>
+            <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
+            <viewLayoutGuide key="safeArea" id="vUN-kp-3ea"/>
+            <point key="canvasLocation" x="199.27536231884059" y="183.48214285714286"/>
+        </view>
+    </objects>
+</document>
